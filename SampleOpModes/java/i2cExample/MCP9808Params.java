@@ -5,7 +5,8 @@ import android.support.annotation.NonNull;
 import com.qualcomm.robotcore.hardware.I2cAddr;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynch;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynchDeviceWithParameters;
-import com.qualcomm.robotcore.hardware.configuration.I2cSensor;
+import com.qualcomm.robotcore.hardware.configuration.annotations.DeviceProperties;
+import com.qualcomm.robotcore.hardware.configuration.annotations.I2cDeviceType;
 import com.qualcomm.robotcore.util.TypeConversion;
 
 /*
@@ -22,9 +23,8 @@ import com.qualcomm.robotcore.util.TypeConversion;
 // Both driver classes cannot register the sensor at the same time. One driver should have the
 // sensor registered, and the other should be commented out
 
-//@I2cDeviceType
-//@DeviceProperties(name = "MCP9808 Temperature Sensor", description = "an MCP9808 temperature sensor", xmlTag = "MCP9808")
-
+// @I2cDeviceType
+// @DeviceProperties(name = "MCP9808 Temperature Sensor", description = "an MCP9808 temperature sensor", xmlTag = "MCP9808")
 public class MCP9808Params extends I2cDeviceSynchDeviceWithParameters<I2cDeviceSynch, MCP9808Params.Parameters>
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////
