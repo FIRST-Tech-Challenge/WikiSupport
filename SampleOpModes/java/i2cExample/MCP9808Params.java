@@ -21,7 +21,10 @@ import com.qualcomm.robotcore.util.TypeConversion;
 @SuppressWarnings({"WeakerAccess", "unused"}) // Ignore access and unused warnings
 // Both driver classes cannot register the sensor at the same time. One driver should have the
 // sensor registered, and the other should be commented out
-//@I2cSensor(name = "MCP9808 Temperature Sensor", description = "Temperature Sensor from Adafruit", xmlTag = "MCP9808")
+
+//@I2cDeviceType
+//@DeviceProperties(name = "MCP9808 Temperature Sensor", description = "an MCP9808 temperature sensor", xmlTag = "MCP9808")
+
 public class MCP9808Params extends I2cDeviceSynchDeviceWithParameters<I2cDeviceSynch, MCP9808Params.Parameters>
 {
     ////////////////////////////////////////////////////////////////////////////////////////////////
