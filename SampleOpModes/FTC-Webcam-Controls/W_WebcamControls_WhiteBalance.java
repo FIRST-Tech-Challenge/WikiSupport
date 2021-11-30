@@ -3,7 +3,7 @@
 This example OpMode allows direct gamepad control of white balance temperature,
 if supported.  It's a companion to the FTC wiki tutorial on Webcam Controls.
 
-Put the Driver Station in Landscape Mode for this telemetry.
+Put the Driver Station Layout in Landscape mode for this telemetry.
 
 Add your own Vuforia key, where shown below.
 
@@ -71,7 +71,8 @@ public class W_WebcamControls_WhiteBalance_v01 extends LinearOpMode {
         myWBControl = vuforia.getCamera().getControl(WhiteBalanceControl.class);
 
         // display current white balance mode
-        telemetry.addLine("\nTouch Start arrow to control white balance temperature");
+        telemetry.addLine("\nTouch Start arrow to control white balance temperature.");
+        telemetry.addLine("\nRecommended: put Driver Station Layout in Landscape.");
         telemetry.addData("\nCurrent white balance mode", myWBControl.getMode());
         telemetry.update();
 
@@ -91,7 +92,7 @@ public class W_WebcamControls_WhiteBalance_v01 extends LinearOpMode {
 
         while (opModeIsActive()) {
 
-            // manually adjust the webcam focus variable
+            // manually adjust the color temperature variable
             if (gamepad1.x) {                  // increase with blue X (cooler)
                 curWhiteBalanceTemp += tempIncrement;
             }  else if (gamepad1.b) {          // decrease with red B (warmer)
@@ -104,7 +105,7 @@ public class W_WebcamControls_WhiteBalance_v01 extends LinearOpMode {
                 curWhiteBalanceTemp = Math.min(curWhiteBalanceTemp, maxWhiteBalanceTemp);
             } 
 
-            // update the webcam's focus length setting
+            // update the color temperature setting
             wasTemperatureSet = myWBControl.setWhiteBalanceTemperature(curWhiteBalanceTemp);
             
             // display live feedback while user observes preview image
