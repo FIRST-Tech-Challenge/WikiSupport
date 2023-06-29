@@ -187,9 +187,9 @@ public class MCP9808 extends I2cDeviceSynchDevice<I2cDeviceSynch>
 
     public final static I2cAddr ADDRESS_I2C_DEFAULT = I2cAddr.create7bit(0x18);
 
-    public MCP9808(I2cDeviceSynch deviceClient)
+    public MCP9808(I2cDeviceSynch deviceClient, boolean deviceClientIsOwned)
     {
-        super(deviceClient, true);
+        super(deviceClient, deviceClientIsOwned);
 
         this.setOptimalReadWindow();
         this.deviceClient.setI2cAddress(ADDRESS_I2C_DEFAULT);
